@@ -199,7 +199,6 @@ public class ChattingScreen extends AppCompatActivity {
         });
     }
     private void getDataMessage(String myId, String friendId) {
-
         HashMap<String, String> map = new HashMap<>();
         map.put("receiver_id", friendId);
         map.put("sender_id", myId);
@@ -269,11 +268,6 @@ public class ChattingScreen extends AppCompatActivity {
     }
 
     private void sendImageMessage(String path) {
-        if (!isMediaManagerInitialized) {
-            /* Config Cloudinary*/
-            configCloudinary();
-            isMediaManagerInitialized = true;
-        }
         Map<String, String> params = new HashMap<String, String>();
         params.put("folder","images/imageMessage");
         MediaManager.get().upload(path).options(params).callback(new ListenerService() {

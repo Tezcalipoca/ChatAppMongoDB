@@ -16,12 +16,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cloudinary.android.MediaManager;
 import com.example.chatappmongodb.Api.ApiManager;
 import com.example.chatappmongodb.MainActivity;
 import com.example.chatappmongodb.Models.ApiResponse;
 import com.example.chatappmongodb.R;
+import com.example.chatappmongodb.View.UpdateMyProfileActivity;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -125,6 +128,7 @@ public class SignInActivity extends AppCompatActivity {
                         writeMyProfile(myId);
                         Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                         intent.putExtra("myId", myId);
+                        configCloudinary();
                         startActivity(intent);
                         finish();
                     }
@@ -159,6 +163,14 @@ public class SignInActivity extends AppCompatActivity {
         editor.remove("Password");
         editor.remove("Checked");
         editor.commit();
+    }
+
+    private void configCloudinary() {
+        Map<String, String> config = new HashMap();
+        config.put("cloud_name", "dvcsktxvh");
+        config.put("api_key", "717455286888243");
+        config.put("api_secret", "kHcRvqkr0HqrUV2uBRkGICTndys");
+        MediaManager.init(SignInActivity.this,config);
     }
 
     private void writeMyProfile(String myId){

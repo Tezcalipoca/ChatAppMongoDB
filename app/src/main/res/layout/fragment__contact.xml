@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".Fragments.Fragment_Contact">
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="20dp"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/searchViewContact"
+            android:layout_width="match_parent"
+            android:layout_height="40.5dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/frame_search_view"
+            app:queryHint="@string/search"
+            app:queryBackground="@color/pale_lavender"
+            />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvListUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20dp"/>
+    </LinearLayout>
+
+
+</LinearLayout>

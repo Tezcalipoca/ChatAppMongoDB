@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".View.MyProfileActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarMyProfileActivity"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/primary"
+        android:theme="@style/AppTheme.Toolbar"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivBackground"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:contentDescription="@string/background"
+            android:scaleType="centerCrop"
+            android:src="@drawable/default_background" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="120dp"
+            android:layout_marginBottom="4dp"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:src="@color/white" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civAvatarProfile"
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:padding="4dp"
+                    android:src="@drawable/default_avatar" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvMyUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:gravity="center"
+                android:text="@string/username"
+                android:textColor="@color/gunmetal"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/slateBlue"
+        android:layout_marginHorizontal="8dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+        <TextView
+            android:id="@+id/tvMyStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="@string/introduceMySelf"
+            android:textSize="15sp"
+            android:textColor="@color/gunmetal"
+            android:maxLines="2" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/icon_accout"/>
+            <TextView
+                android:id="@+id/tvMyUserNameSmall"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/username"
+                android:textSize="15sp"
+                android:textColor="@color/gunmetal"
+                android:maxLines="2" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/icon_email"/>
+            <TextView
+                android:id="@+id/tvMyEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/email"
+                android:textSize="15sp"
+                android:textColor="@color/gunmetal"
+                android:maxLines="2" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="8dp"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/icon_location"/>
+            <TextView
+                android:id="@+id/tvCountry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/vietNam"
+                android:textSize="15sp"
+                android:textColor="@color/gunmetal"
+                android:maxLines="2" />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/slateBlue"
+            android:layout_marginVertical="24dp" />
+    </LinearLayout>
+
+</LinearLayout>

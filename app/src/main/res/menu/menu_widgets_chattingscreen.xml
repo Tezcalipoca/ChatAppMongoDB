@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/popupSendLocation"
+        android:icon="@drawable/icon_location"
+        android:title="@string/sendLocation"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/popupSendFile"
+        android:icon="@drawable/icon_attach_file_24"
+        android:title="@string/sendFile"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/popupSendAudio"
+        android:icon="@drawable/icon_voice_24"
+        android:title="@string/sendAudio"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/popupSendImageFromCamera"
+        android:icon="@drawable/icon_camera_24"
+        android:title="@string/sendImageFromCamera"
+        app:showAsAction="always"/>
+</menu>

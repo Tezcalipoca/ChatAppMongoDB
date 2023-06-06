@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civAvatarFriendChatting"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/default_avatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivFriendChattingSend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxWidth="261dp"
+        android:maxHeight="280dp"
+        android:layout_marginStart="10dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toEndOf="@+id/civAvatarFriendChatting"
+        app:layout_constraintTop_toTopOf="@+id/tvSmsOfFriend"
+        app:layout_constraintWidth="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvTimeFriendSendImage"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="3dp"
+        android:inputType="datetime"
+        android:text="@string/time"
+        android:textColor="@color/slateBlue"
+        android:textSize="12.25sp"
+        app:layout_constraintStart_toStartOf="@+id/ivFriendChattingSend"
+        app:layout_constraintTop_toBottomOf="@+id/ivFriendChattingSend"
+        app:layout_constraintWidth="wrap_content"
+        tools:ignore="TextViewEdits" />
+
+    <TextView
+        android:id="@+id/tvSmsOfFriend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/sms_friend"
+        android:inputType="textLongMessage|textMultiLine"
+        android:maxWidth="280dp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="12dp"
+        android:text="@string/message"
+        android:textColor="@color/gunmetal"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/civAvatarFriendChatting"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth="wrap_content"
+        tools:ignore="TextViewEdits" />
+
+    <TextView
+        android:id="@+id/tvTimeFriendSendMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="3dp"
+        android:inputType="datetime"
+        android:text="@string/time"
+        android:textColor="@color/slateBlue"
+        android:textSize="12.25sp"
+        app:layout_constraintStart_toStartOf="@+id/tvSmsOfFriend"
+        app:layout_constraintTop_toBottomOf="@+id/tvSmsOfFriend"
+        app:layout_constraintWidth="wrap_content"
+        tools:ignore="TextViewEdits" />
+
+    <ImageView
+        android:id="@+id/ivImageISend"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxWidth="261dp"
+        android:maxHeight="280dp"
+        android:layout_marginEnd="20dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvSmsOfFriend"
+        app:layout_constraintWidth="wrap_content" />
+    <TextView
+        android:id="@+id/tvTimeISendImage"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="3dp"
+        android:inputType="datetime"
+        android:text="@string/time"
+        android:textColor="@color/slateBlue"
+        android:textSize="12.25sp"
+        app:layout_constraintEnd_toEndOf="@+id/ivImageISend"
+        app:layout_constraintTop_toBottomOf="@+id/ivImageISend"
+        app:layout_constraintWidth="wrap_content"
+        tools:ignore="TextViewEdits" />
+
+    <TextView
+        android:id="@+id/tvSmsOfMe"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/sms_me"
+        android:inputType="textLongMessage|textMultiLine"
+        android:maxWidth="325dp"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="12dp"
+        android:text="@string/message"
+        android:textColor="@color/gunmetal"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvSmsOfFriend"
+        app:layout_constraintWidth="wrap_content"
+        tools:ignore="TextViewEdits" />
+
+    <TextView
+        android:id="@+id/tvTimeISendMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="3dp"
+        android:inputType="datetime"
+        android:text="@string/time"
+        android:textColor="@color/slateBlue"
+        android:textSize="12.25sp"
+        app:layout_constraintEnd_toEndOf="@+id/tvSmsOfMe"
+        app:layout_constraintTop_toBottomOf="@+id/tvSmsOfMe"
+        app:layout_constraintWidth="wrap_content"
+        tools:ignore="TextViewEdits" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

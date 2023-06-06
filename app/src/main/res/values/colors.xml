@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- TODO: Update new color -->
+    <color name="primary">#4EAC6D</color>
+    <color name="second">#DCEEE2</color>
+    <color name="turquoise">#06D6A0</color>
+    <color name="grey">#DADBDD</color>
+    <color name="pale_white">#DADBDD</color>
+    <color name="pale_lavender">#F6F6F9</color>
+    <color name="dark_gray">#2E2E2E</color>
+    <color name="gunmetal">#495057</color>
+    <color name="slateBlue">#797C8C</color>
 </resources>

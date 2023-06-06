@@ -60,7 +60,8 @@ public class UpdateMyProfileActivity extends AppCompatActivity {
     private String myId, myName, myEmail, myProfile, myBackground, myStatus;
     private ProgressDialog dialog;
     private SharedPreferences sharedPreferences;
-    private boolean isMediaManagerInitialized = false;
+//    private boolean isMediaManagerInitialized;
+    private String isMediaManagerInitialized;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,8 +89,11 @@ public class UpdateMyProfileActivity extends AppCompatActivity {
         btnSaveStatus = findViewById(R.id.btnSaveStatus);
         linearLayoutUpdateMyName = findViewById(R.id.linearLayoutUpdateMyName);
         linearLayoutUpdateMySatus = findViewById(R.id.linearLayoutUpdateMySatus);
-        sharedPreferences = UpdateMyProfileActivity.this.getSharedPreferences("myId", Context.MODE_PRIVATE);
-        myId = sharedPreferences.getString("myId", "");
+//        sharedPreferences = UpdateMyProfileActivity.this.getSharedPreferences("myId", Context.MODE_PRIVATE);
+        sharedPreferences = UpdateMyProfileActivity.this.getSharedPreferences("isMediaManagerInitialized", Context.MODE_PRIVATE);
+//        myId = sharedPreferences.getString("myId", "");
+        myId = getIntent().getStringExtra("myId");
+        isMediaManagerInitialized = sharedPreferences.getString("isMediaManagerInitialized","false");
         dialog = new ProgressDialog(UpdateMyProfileActivity.this);
         dialog.setTitle("Cập nhật ảnh");
         dialog.setMessage("Đang cập nhật, vui lòng đợi...");
@@ -98,6 +102,7 @@ public class UpdateMyProfileActivity extends AppCompatActivity {
     private void setEvent() {
         /* Xử lý logic cho Toolbar */
         setActionToolbar(toolbarUpdateProfileActivity);
+        Toast.makeText(this, isMediaManagerInitialized, Toast.LENGTH_SHORT).show();
         /* Update ảnh bìa */
         ibtnUpdateBackground.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,7 +141,6 @@ public class UpdateMyProfileActivity extends AppCompatActivity {
         config.put("api_key", "717455286888243");
         config.put("api_secret", "kHcRvqkr0HqrUV2uBRkGICTndys");
         MediaManager.init(UpdateMyProfileActivity.this,config);
-        isMediaManagerInitialized = true;
     }
 
 
@@ -174,10 +178,10 @@ public class UpdateMyProfileActivity extends AppCompatActivity {
     }
 
     private void callApiUploadImage(String strRealPath, int requestCode) {
-        if (!isMediaManagerInitialized) {
+        if (isMediaManagerInitialized.equals("false")) {
             /* Config Cloudinary*/
             configCloudinary();
-            isMediaManagerInitialized = true;
+            isMediaManagerInitialized = "true";
         }
         Map<String, String> params = new HashMap<String, String>();
         if (requestCode == REQUEST_UPDATE_BACKGROUND) {

@@ -121,7 +121,7 @@ public class SignInActivity extends AppCompatActivity {
                             removeSharedPreferences();
                         }
                         String myId = apiResponse.getData().getUser().get_id();
-                        Toast.makeText(SignInActivity.this, "Đăng nhập thành công" + myId , Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SignInActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                         writeMyProfile(myId);
                         Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                         intent.putExtra("myId", myId);
@@ -164,6 +164,7 @@ public class SignInActivity extends AppCompatActivity {
     private void writeMyProfile(String myId){
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("myId",myId);
+        editor.putString("isMediaManagerInitialized","false");
         editor.apply();
     }
 }

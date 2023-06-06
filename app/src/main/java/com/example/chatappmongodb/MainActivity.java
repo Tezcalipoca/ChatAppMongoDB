@@ -177,6 +177,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                         break;
                                     case R.id.popupProfileUpdate:
                                         Intent intent02 = new Intent(MainActivity.this, UpdateMyProfileActivity.class);
+                                        intent02.putExtra("myId", myId);
                                         startActivity(intent02);
                                         break;
                                     case R.id.popupProfileLogout:

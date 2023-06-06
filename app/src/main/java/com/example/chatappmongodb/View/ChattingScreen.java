@@ -65,9 +65,9 @@ public class ChattingScreen extends AppCompatActivity {
     private ArrayList<Message> listMessage = new ArrayList<>();
     private String friendId, myId;
     private static final int MY_REQUEST_CODE = 10;
-    private boolean isMediaManagerInitialized = false;
     private  Uri uri;
     private static MediaManager mediaManager;
+    private boolean isMediaManagerInitialized = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -269,8 +269,11 @@ public class ChattingScreen extends AppCompatActivity {
     }
 
     private void sendImageMessage(String path) {
-        /* Config Cloudinary*/
-        configCloudinary();
+        if (!isMediaManagerInitialized) {
+            /* Config Cloudinary*/
+            configCloudinary();
+            isMediaManagerInitialized = true;
+        }
         Map<String, String> params = new HashMap<String, String>();
         params.put("folder","images/imageMessage");
         MediaManager.get().upload(path).options(params).callback(new ListenerService() {
